@@ -59,35 +59,43 @@ html, body {
 
 /* PARTIE A PROPOS */
 
-.aPropos {
+#aPropos {
   margin-top: 5%;
   margin-bottom: 5%;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
 }
 
-.aPropos h2{
-  margin-bottom: 5%;
+#aPropos h2{
+  text-align: right;
+  margin-right: 7%;
+  margin-bottom: 8%;
+  font-family: 'Lobster', cursive;
+}
+
+.picto {
+  margin: auto;
 }
 
 .description{
-  padding-right: 15%;
-}
-
-@media (max-device-width: 480px){
-  .description{
-    padding-right: 0%;
-  }
+  text-align: justify;
 }
 
 .photoProfile{
-  width: 100%;
-  height: auto;
+  border:3px solid #303730;
+	margin: 0px -15px;
+  border-radius: 15px;
+  background-image: url("../img/photoAPropos.jpg");
+  background-size: cover;
+  background-position: 0px 90%;
+  min-height: 500px !important;
 }
 
 .v-center {
    display: flex;
    align-items: center;
 }
-
 
 .aPropos p{
   margin-top: 0%;
@@ -97,6 +105,30 @@ html, body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.logos{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+@media (max-device-width: 576px){
+  #aPropos h2{
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .photoProfile{
+    border: 0px;
+  	margin: 0px 0px;
+    min-height: 200px !important;
+    background-image: url("../img/photoProfile.png");
+    background-size: 100%;
+    background-position: 0 1px;
+  }
+}
 
 /* PARTIE CURSUS */
 
