@@ -1,3 +1,34 @@
+<?php
+  if (isset($_POST['nom'])) { //Si le formulaire a été envoyé
+    if ( !empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['message']) ) {
+      $encoding = "utf-8";
+      // Preferences for Subject field
+      $subject_preferences = array(
+          "input-charset" => $encoding,
+          "output-charset" => $encoding,
+          "line-length" => 76,
+          "line-break-chars" => "\r\n"
+      );
+
+      // Mail header
+      $header = "Content-type: text/html; charset=".$encoding." \r\n";
+      $header .= "From: ".$_POST['nom']." <".$_POST['mail']."> \r\n";
+      $header .= "MIME-Version: 1.0 \r\n";
+      $header .= "Content-Transfer-Encoding: 8bit \r\n";
+      $header .= "Date: ".date("r (T)")." \r\n";
+      $header .= iconv_mime_encode("Subject", $mail_subject, $subject_preferences);
+
+      $message = 'Message de :'.$_POST['nom'].'<br> Email : '.$_POST['mail'].'<br> Message : '.$_POST['message'];
+      // Send mail
+      mail('mickael.lalanne03@gmail.com', 'Contact depuis le Portfolio', $message , $header);
+      $envoi = true;
+    }
+    else {
+      $envoi = false;
+    }
+  }
+?>
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -237,20 +268,28 @@
           <div class="container">
             <h2>Contact</h2>
             <p>Information, question, projet, n'hésitez pas à prendre contact avec moi !</p>
+            <?php if (isset($_POST['nom'])) {
+              if ($envoi) {
+                echo '<p style="color:#a8af77">Votre message a bien été envoyé.</p>';
+              }
+              else {
+                echo '<p style="color:#ffab67">Votre message n\'a pas été envoyé. Merci bien vouloir renseigner tous les champs.</p>';
+              }
+            } ?>
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-lg-12">
-                <form class="form-horizontal">
+                <form action="index.php#contact" method="post" class="form-horizontal">
                   <div class="form-group">
                     <label for="exampleInputName2">Nom</label>
-                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Bruce Wayne">
+                    <input type="text" name="nom" class="form-control" id="exampleInputName2" placeholder="Bruce Wayne">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail2">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="batmail@gmail.com">
+                    <input type="email" name="mail" class="form-control" id="exampleInputEmail2" placeholder="batmail@gmail.com">
                   </div>
                   <div class="form-group ">
                     <label>Votre Message</label>
-                    <textarea  class="form-control" placeholder="I'm Batman"></textarea>
+                    <textarea name="message" class="form-control" placeholder="I'm Batman"></textarea>
                   </div>
                   <button type="submit" class="btn btn-default">Envoyer</button>
                 </form>
