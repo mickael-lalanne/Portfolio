@@ -64,7 +64,7 @@ html, body {
   margin-bottom: 5%;
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 #aPropos h2{
@@ -74,18 +74,15 @@ html, body {
   font-family: 'Lobster', cursive;
 }
 
-.picto {
-  margin: auto;
-}
 
 .description{
   text-align: justify;
 }
 
 .photoProfile{
-  border:3px solid #303730;
-	margin: 0px -15px;
-  border-radius: 15px;
+  border-top: 3px solid #303730;
+  border-right: 3px solid #303730;
+  border-bottom: 3px solid #303730;
   background-image: url("../img/photoAPropos.jpg");
   background-size: cover;
   background-position: 0px 90%;
@@ -123,10 +120,11 @@ html, body {
   .photoProfile{
     border: 0px;
   	margin: 0px 0px;
-    min-height: 200px !important;
+    min-height: 150px !important;
     background-image: url("../img/photoProfile.png");
-    background-size: 100%;
-    background-position: 0 1px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
 }
 
