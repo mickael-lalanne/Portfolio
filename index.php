@@ -85,7 +85,7 @@
         <div class="col-xs-12 col-sm-6 col-lg-7 v-center photoProfile">
         </div>
         <div class="col-xs-12 col-sm-6 col-lg-5 v-center justify-content-center">
-          <span> <h2>A Propos</h2>
+          <div> <h2>A Propos</h2>
            <p><img src="img/lieu.png" alt="Icone Localisation"/> Tarbes(65), FRANCE<br></p>
            <p><img src="img/mail.png" alt="Icone E-mail"/>  mickael.lalanne03@gmail.com<br></p>
            <p><img src="img/birthday.png" alt="Icone Anniversaire"/> 3 Septembre 1996</p>
@@ -94,9 +94,9 @@
            <div class="logos">
              <a href="https://www.linkedin.com/in/mickael-lalanne" target="_blank" title="Lien Linkedin"><img class="" alt="Logo Linkedin" src="img/linkedin.png"/></a>
              <a href="https://github.com/mickael-lalanne" target="_blank" title="Lien GitHub"><img class="" alt="Logo GitHub" src="img/github.png"/></a>
-             <a href="CV LALANNE Mickael.pdf" target="_blank" title="Télécharger mon CV"><img class="" alt="Logo CV" src="img/cv.png"/></a>
+             <a href="CV-LALANNE-Mickael.pdf" target="_blank" title="Télécharger mon CV"><img class="" alt="Logo CV" src="img/cv.png"/></a>
            </div>
-          </span>
+         </div>
 
          </div>
         </div>
@@ -312,7 +312,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
+    <script>
 
     // Select all links with hashes
     $('a[href*="#"]')
